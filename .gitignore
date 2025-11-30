@@ -1,24 +1,22 @@
 # Entorno virtual
 .venv/
 venv/
-ENV/
 
 # Archivos de sistema
 __pycache__/
 *.pyc
 
-# Archivos de base local
+# Base de datos local
 db.sqlite3
-data/
-media/
 
-# Archivos generados por Django
+# Archivos generados
 staticfiles/
-static/
+media/
+data/
 
-# Archivo de variables
+# Variables de entorno
 .env
 
-# Configuración de editor
-*.vscode/
+# IDEs
 .idea/
+.vscode/
