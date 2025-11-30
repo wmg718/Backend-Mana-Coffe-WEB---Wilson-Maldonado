@@ -2,7 +2,7 @@
 .venv/
 venv/
 ENV/
-
+.env
 # Archivos de sistema
 __pycache__/
 *.pyc
