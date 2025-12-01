@@ -169,8 +169,7 @@ csrf_trusted_origins = ['http://*','https://web-production-1f3e7.up.railway.app'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
-DEFAULT_FILE_STORAGE = os.environ.get('CLOUDINARY_URL')
+
 
 import cloudinary
 import cloudinary.uploader
@@ -178,7 +177,7 @@ import cloudinary.api
 
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
