@@ -38,6 +38,8 @@ ALLOWED_HOSTS = ['web-production-1f3e7.up.railway.app']
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,9 +50,6 @@ INSTALLED_APPS = [
     'django_filters',
     'corsheaders',
     'api',
-    'cloudinary_storage',
-    'cloudinary',
-
 ]
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
