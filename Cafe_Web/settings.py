@@ -171,7 +171,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = os.environ.get('CLOUDINARY_URL')
 
 
 
