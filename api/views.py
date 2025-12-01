@@ -12,14 +12,15 @@ class CategoriaViewSet(viewsets.ModelViewSet):
     pagination_class = CustomPagination
 
 class ProductoViewSet(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
+
+    queryset = Producto.objects.all().order_by('id')
     serializer_class = ProductoSerializer
     pagination_class = CustomPagination
     permission_classes = [IsAdminOrReadOnly]
 
 
     def get_queryset(self):
-        queryset = Producto.objects.all()
+        queryset = Producto.objects.all().order_by('id')
 
         # Filtro por categoría
         categoria = self.request.query_params.get('categoria')
