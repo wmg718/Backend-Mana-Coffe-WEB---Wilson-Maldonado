@@ -15,7 +15,6 @@ from django.contrib import staticfiles
 import os
 import dj_database_url
 from dotenv import load_dotenv
-import cloudinary
 
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -173,8 +172,19 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 DEFAULT_FILE_STORAGE = os.environ.get('CLOUDINARY_URL')
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET')
+}
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
