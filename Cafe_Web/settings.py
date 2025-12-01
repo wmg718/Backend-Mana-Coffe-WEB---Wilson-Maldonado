@@ -169,21 +169,12 @@ csrf_trusted_origins = ['http://*','https://web-production-1f3e7.up.railway.app'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY':    os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),}
-
-cloudinary.config(
-    cloud_name=CLOUDINARY_STORAGE.get('CLOUD_NAME'),
-    api_key=CLOUDINARY_STORAGE.get('API_KEY'),
-    api_secret=CLOUDINARY_STORAGE.get('API_SECRET')
-)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
